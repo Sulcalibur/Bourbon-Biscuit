@@ -1,0 +1,15 @@
+@mixin bis_nav-list {
+  
+  ul {
+    display: block;
+    
+    li {
+      display: inline;
+      padding: 1em 1em 1em 0;
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
