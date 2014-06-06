@@ -24,3 +24,17 @@
 // .element p {
 //   @extend %vertical-align;
 // }
+
+// -----
+
+// As a few people have pointed out, this method can cause elements to be blurry due to the element being placed on a “half pixel”. A solution for this is to set its parent element to preserve-3d. Like following:
+//
+// .parent-element {
+//   -webkit-transform-style: preserve-3d;
+// }
+//
+// .element {
+//   position: relative;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
