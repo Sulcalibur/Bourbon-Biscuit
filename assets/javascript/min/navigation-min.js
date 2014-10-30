@@ -1,0 +1,1 @@
+$(".showmenu").bind("click",function(){$(".menusection").toggleClass("show")}),$(".menulink").bind("click",function(){$(".menusection").toggleClass("show")}),$(document).click(function(n){$(".menusection").is(n.target)||0!==$(".menusection").has(n.target).length||$(".menusection").removeClass("show")});

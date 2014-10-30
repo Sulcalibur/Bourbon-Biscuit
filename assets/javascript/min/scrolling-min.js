@@ -1,0 +1,1 @@
+$(document).ready(function(){$window=$(window),$('section[data-type="background"]').each(function(){var n=$(this);$(window).scroll(function(){var e=-($window.scrollTop()/n.data("speed")),o="50% "+e+"px";n.css({backgroundPosition:o})})})}),document.createElement("article"),document.createElement("section");

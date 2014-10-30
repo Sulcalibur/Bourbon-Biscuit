@@ -1,15 +1,217 @@
-@mixin bis_nav-list {
-  
-  ul {
-    display: block;
-    
-    li {
-      display: inline;
-      padding: 1em 1em 1em 0;
-      
-      &:last-child {
-        padding-right: 0;
+// Navigation Options
+
+// ----------------------------------------- //
+ // $font-size: 12px;
+ // $line-height: 30px;
+ // font: #{$font-size}/#{$line-height};
+// ----------------------------------------- //
+
+// Drop Top
+
+@mixin droptop-menu($bg-color,$font-color,$font-hover) {
+
+  // @media screen and (min-width:391px) and (max-width:1000px) {
+
+      width: 100%;
+      background-color: $bg-color;
+      position: absolute;
+      z-index: 1000;
+      font-size: 24px;
+      padding: 10rem 0rem 1rem 0rem;
+      // position: fixed;
+      top: -1000px;
+      // overflow: hidden;
+      @include transition(all 1s $ease-in-out-back);
+
+      &.show {
+        top: -10rem;
+      }
+
+    nav {
+
+      ul {
+        display: block;
+        padding: 0;
+
+        li {
+          display: block;
+          text-align: center;
+          padding: 0.5rem 0rem;
+          margin: 0;
+
+          a {
+            color: $font-color;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover, &:active {
+              color: $font-hover;
+              }
+            }
+          }
+        }
+      }
+
+    .showmenu {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      @include button;
+
+      &.slideshowmenu {
+        display: none;
       }
     }
-  }
+
+
+
+    section {
+
+      h1 {
+        width: 90%;
+        margin: auto;
+        padding: 1rem;
+      }
+
+      p {
+        width: 90%;
+        margin: auto;
+        padding: 1rem;
+      }
+    }
+  // }
+} //End Droptop Mixin
+
+
+
+// Slide Left
+
+@mixin slideleft-menu {
+
+  // @media screen and (min-width:391px) and (max-width:1000px) {
+
+    width: 80%;
+    height: 100%;
+    max-width: 340px;
+    background-color: rgba(black, 0.85);
+    position: absolute;
+    z-index: 1000;
+    font-size: 24px;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+    // position: fixed;
+    left: -340px;
+    @include transition(all 1s $ease-in-out-back);
+
+
+    &.show {
+      left: -2rem;
+    }
+
+    nav {
+
+      ul {
+        display: block;
+        padding: 0;
+
+        li {
+          display: block;
+          text-align: center;
+          padding: 0.5rem 0rem;
+          margin: 0;
+
+          a {
+            color: #999;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover, &:active {
+              color: #FFF;
+              }
+            }
+          }
+        }
+      }
+
+    .showmenu {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      @include button;
+    }
+
+    section {
+
+      h1 {
+        width: 90%;
+        margin: auto;
+        padding: 1rem;
+      }
+
+      p {
+        width: 90%;
+        margin: auto;
+        padding: 1rem;
+      }
+    }
+  // }
+} // End Slideleft Mixin
+
+
+
+
+
+// Standard Default
+
+@mixin standard-menu {
+
+  // @media screen and (min-width:401px) {
+
+    .showmenu {
+      // @include hide-text;
+      display: none;
+    }
+
+    .menusection {
+    width: 100%;
+    background-color: #CCC;
+    padding: 0.5rem 0rem;
+    // position: fixed;
+
+    nav {
+      max-width: 800px;
+      margin: auto;
+      padding: 1rem;
+
+      ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: inline;
+          padding: 0.5rem 1rem 0.5rem 0;
+
+          a {
+            color: #999;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+              color: #333;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    section {
+
+      h1, p {
+        max-width: 800px;
+        margin: auto;
+        padding: 1rem;
+      }
+    }
+  // }
 }
