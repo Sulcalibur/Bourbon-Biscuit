@@ -1,7 +1,7 @@
 
 // Default fallback background for example
 
-@mixin scrollPanel($background, $min-height, $height, $max-width) {
+@mixin scrollPanel($min-height, $height, $max-width, $background: url(http://cl.ly/YJ8v/landscape-1.jpg)) {
 
     background: $background 50% 0 repeat fixed;
     min-height: $min-height;
